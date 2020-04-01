@@ -1,0 +1,32 @@
+<!-- Created by MHU on 31.03.2020. -->
+<mvc:View xmlns:mvc="sap.ui.core.mvc"
+          xmlns:core="sap.ui.core"
+          xmlns="sap.m"
+          controllerName="csg.dev.BigBuddy.controller.Main">
+    <Page title="{i18n>appTitle}"
+          backgroundDesign="Solid">
+        <headerContent>
+            <ObjectStatus title="Connected"
+                          icon="{= ${config>/bConnected} ? 'sap-icon://accept' : 'sap-icon://decline'}"
+                          state="{= ${config>/bConnected} ? 'Success' : 'Error'}"
+                          class="sapMObjectStatusLarge"/>
+        </headerContent>
+        <content>
+            <Button text="Login"
+                    press="onPressLogin"/>
+            <Button text="Logout"
+                    press="onPressLogout"/>
+            <Button text="Restart"
+                    press="onPressRestart"/>
+            <Input submit="onSubmitCommand"/>
+
+        </content>
+        <footer>
+            <Toolbar>
+                <core:Fragment type="XML"
+                               fragmentName="csg.dev.BigBuddy.view.fragments.MessagePopover"/>
+                <ToolbarSpacer/>
+            </Toolbar>
+        </footer>
+    </Page>
+</mvc:View>

@@ -1,0 +1,8 @@
+<!-- Created by MHU on 31.03.2020. -->
+<mvc:View xmlns:mvc="sap.ui.core.mvc"
+          xmlns="sap.m"
+          controllerName="csg.dev.BigBuddy.controller.App">
+    <App id="app"
+         busy="{appView>/bBusy}"
+         busyIndicatorDelay="{appView>/iDelay}"/>
+</mvc:View>

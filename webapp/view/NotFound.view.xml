@@ -1,0 +1,15 @@
+<!-- Created by MHU on 31.03.2020. -->
+<mvc:View xmlns:mvc="sap.ui.core.mvc"
+          xmlns="sap.m"
+          controllerName="csg.dev.controller.NotFound">
+    <MessagePage title="{i18n>notFoundTitle}"
+                 text="{i18n>notFoundText}"
+                 icon="sap-icon://document"
+                 id="pageNotFound">
+        <customDescription>
+            <Link id="link"
+                  text="{i18n>backToHome}"
+                  press="onHomePressed"/>
+        </customDescription>
+    </MessagePage>
+</mvc:View>

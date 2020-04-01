@@ -1,0 +1,19 @@
+default:
+  image: node:13.8-alpine
+
+stages:
+  - test
+  - build
+
+before_script:
+  - npm install
+
+test:
+  stage: test
+  script:
+    - npm run lint
+
+build:
+  stage: build
+  script:
+    - ./node_modules/.bin/ui5 build

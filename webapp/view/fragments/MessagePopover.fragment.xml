@@ -1,0 +1,21 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core"
+                         xmlns="sap.m">
+    <Button id="btnMessagePopover"
+            icon="sap-icon://alert"
+            text="{= ${message>/}.length }"
+            visible="{= ${message>/}.length > 0 }"
+            type="Emphasized"
+            press=".message.onMessagePopoverPress"/>
+    <MessagePopover id="msgPopover"
+                    initiallyExpanded="true"
+                    itemSelect=""
+                    items="{message>/}">
+        <items>
+            <MessagePopoverItem description="{message>description}"
+                                title="{message>message}"
+                                type="{message>type}"
+                                subtitle="{message>additionalText}">
+            </MessagePopoverItem>
+        </items>
+    </MessagePopover>
+</core:FragmentDefinition>
