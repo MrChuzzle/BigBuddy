@@ -51,23 +51,21 @@ sap.ui.define([
         /* =========================================================== */
 
         onPressLogin: function () {
-            this.setBusy(true);
-            this.getDiscord().login().then(() => this.setBusy(false));
+            this.sendMessageToBigBuddy("!login");
         },
 
         onPressLogout: function () {
-            this.getDiscord().logout();
+            this.sendMessageToBigBuddy("!logout");
         },
 
         onPressRestart: function () {
-            this.setBusy(true);
-            this.getDiscord().restart().then(() => this.setBusy(false));
+            this.sendMessageToBigBuddy("!restart");
         },
 
         onSubmitCommand: function (oEvent) {
             var sValue = oEvent.getParameter("value");
 
-            this.getDiscord().execute(sValue);
+            this.sendMessageToBigBuddy(sValue);
         },
 
         /* =========================================================== */
@@ -84,6 +82,7 @@ sap.ui.define([
             var oView = this.getView(),
                 oModel = oView.getModel();
 
+            // TODO: check if you are connected to the bot server
             oModel.metadataLoaded().then(function () {
                 // call binding functions here...
             }.bind(this));

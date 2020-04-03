@@ -9,10 +9,6 @@ sap.ui.define([
 ], function (Controller, History, Formatter) { // eslint-disable-line id-match
     "use strict";
 
-    var oGlobalStatics = {
-        _oDiscord: ""
-    };
-
     // noinspection UnnecessaryLocalVariableJS
     /**
      * BaseController.js
@@ -124,10 +120,6 @@ sap.ui.define([
             }
         },
 
-        getDiscord: function () {
-            return oGlobalStatics._oDiscord;
-        },
-
         /* =========================================================== */
         /* Setter functions of controller  						       */
         /* =========================================================== */
@@ -141,10 +133,6 @@ sap.ui.define([
          */
         setModel: function (oModel, sName) {
             return this.getView().setModel(oModel, sName);
-        },
-
-        setDiscord: function (oDiscord) {
-            oGlobalStatics._oDiscord = oDiscord;
         },
 
         setBusy: function (bBusy) {
@@ -193,6 +181,21 @@ sap.ui.define([
                     }
                 }
             }
+        },
+
+        sendMessageToBigBuddy: function (sMessage) {
+            var oXhttp = new XMLHttpRequest();
+
+            oXhttp.onreadystatechange = function (oEvent) {
+                if (oEvent.target.readyState === 4 && oEvent.target.status === 200) {
+                    var oResult = JSON.parse(oEvent.target.responseText);
+                    debugger;
+                }
+            }.bind(this);
+
+            oXhttp.open("POST", "http://localhost:8082", true);
+            oXhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+            oXhttp.send(sMessage);
         }
 
     });

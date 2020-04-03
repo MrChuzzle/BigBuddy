@@ -3,10 +3,9 @@
  */
 sap.ui.define([
     "../controller/BaseController",
-    "sap/ui/model/json/JSONModel",
-    "../discord/Discord"
+    "sap/ui/model/json/JSONModel"
 
-], function (BaseController, JSONModel, Discord) {  // eslint-disable-line id-match
+], function (BaseController, JSONModel) {  // eslint-disable-line id-match
     "use strict";
 
     // noinspection UnnecessaryLocalVariableJS
@@ -118,11 +117,6 @@ sap.ui.define([
 					}
 				}.bind(this));
 			}.bind(this));
-
-			var oConfig = oView.getModel("config");
-
-			Discord.init(oConfig);
-			this.setDiscord(Discord);
         }
 
         /* =========================================================== */

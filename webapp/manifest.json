@@ -18,7 +18,7 @@
                 }
             },
             "config": {
-                "uri": "models/config.json",
+                "uri": "../discord/models/config.json",
                 "type": "JSON"
             }
         }
