@@ -11,9 +11,9 @@ var oBigBuddy = function BigBuddy (aArguments) { // eslint-disable-line require-
     this.setClient(oClient);
     this.attachEvents(oClient);
 
-    if (aArguments.includes("login")) {
+    // if (aArguments.includes("login")) {
         this.login();
-    }
+    // }
 };
 
 oBigBuddy.prototype.attachEvents = function (oClient) {
