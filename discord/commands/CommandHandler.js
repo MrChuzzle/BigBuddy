@@ -1,11 +1,11 @@
-var Join = require("./Join").oJoin;
+var Join = require("./Join").oJoin; // eslint-disable-line id-match
 
 
-var oCommandHandler = function CommandHandler(oBigBuddy) {
+var oCommandHandler = function CommandHandler (oBigBuddy) { // eslint-disable-line require-jsdoc
     this._oBigBuddy = oBigBuddy;
     this._aCommands = [
         new Join(oBigBuddy)
-    ]
+    ];
 };
 
 oCommandHandler.prototype.execute = function (sCommand, aArguments) {

@@ -1,9 +1,9 @@
-var Discord = require("discord.js");
-var CommandHandler = require("./commands/CommandHandler").oCommandHandler;
-var fs = require("fs");
+var Discord = require("discord.js"); // eslint-disable-line id-match
+var CommandHandler = require("./commands/CommandHandler").oCommandHandler; // eslint-disable-line id-match
+var fs = require("fs"); // eslint-disable-line id-match
 var _oConfigModel = JSON.parse(fs.readFileSync(__dirname + "/models/config.json", "utf8"));
 
-var oBigBuddy = function BigBuddy(aArguments) {
+var oBigBuddy = function BigBuddy (aArguments) { // eslint-disable-line require-jsdoc
     var oClient = new Discord.Client(),
         oCommandHandler = new CommandHandler(this);
 

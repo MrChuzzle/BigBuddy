@@ -1,6 +1,6 @@
-var XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
+var XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest; // eslint-disable-line id-match
 
-var oJoin = function Join(oBigBuddy) {
+var oJoin = function Join (oBigBuddy) { // eslint-disable-line require-jsdoc
     this._oBigBuddy = oBigBuddy;
 };
 
@@ -32,7 +32,7 @@ oJoin.prototype.execute = function (sCommand, aArguments) {
 var oQueue = [];
 var sNextPageToken = "";
 
-function handleResult(oResult) {
+function handleResult (oResult) {
     console.log(oResult);
 }
 

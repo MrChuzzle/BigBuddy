@@ -6,7 +6,7 @@
         "plugin:import/warnings"
     ],
     "parserOptions": {
-        "ecmaVersion": 5,
+        "ecmaVersion": 6,
         "sourceType": "script"
     },
     "env": {
@@ -100,7 +100,7 @@
         ],
         "yoda": "error",
         "strict": [
-            "error",
+            "off",
             "function"
         ],
         "no-catch-shadow": "error",
@@ -209,7 +209,10 @@
         ],
         "id-match": [
             "warn",
-            "^([_]?([o,i,s,b,a]|fn)([A-Z][a-z]+[0-9]?)*|undefined)$"
+            "^([_]?([o,i,s,b,a]|fn)([A-Z][a-z]+[0-9]?)*|undefined)$",
+            {
+                "onlyDeclarations": true
+            }
         ],
         "space-before-blocks": "warn",
         "space-before-function-paren": "warn"
