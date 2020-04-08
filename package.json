@@ -15,10 +15,10 @@
     },
     "scripts": {
         "start": "npm-run-all --parallel bot serve",
-        "stop": "./stop-server.js",
-        "serve": "ui5 serve -o index.html",
-        "bot": "node /var/www/vhosts/bigbuddybot.geekblog.dev/httpdocs/bot/discord/Main.js",
-        "test": "npm run lint",
+        "stop": "/opt/plesk/node/6/bin/npm run stop-server.js",
+        "serve": "ui5 serve -o webapp/sindex.html",
+        "bot": "node app.js",
+        "test": "/opt/plesk/node/6/bin/npm run lint",
         "lint": "eslint webapp",
         "build:ui": "ui5 build --clean-dest --dest approuter/WebContent"
     },

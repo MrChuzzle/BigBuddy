@@ -5,12 +5,12 @@
 //}).listen(8080, '127.0.0.1');
 var BigBuddy = require("./discord/BigBuddy").oBigBuddy;
 var http = require("http");
-const io = require('socket.io')(buildServer());
 
 // init big buddy bot
 var oBigBuddy = new BigBuddy(process.argv.slice(2));
 
-//Ist jetzt nach oben gewandert ^^
+const io = require('socket.io')(buildServer());
+//buildServer now in Socke-IO
 //buildServer();
 
 function buildServer() {
@@ -21,8 +21,10 @@ function buildServer() {
         oResponse.setHeader("Access-Control-Allow-Methods", "POST");
         oResponse.setHeader("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type");
         oResponse.writeHead(200, {"Content-Type": "application/json"});
-        oResponse.write("Message successfully received!");
-        oResponse.end();
+        oResponse.write("Message successfully received! app.js");
+        oResponse.end( () => {
+            console.log('Message successfully received! app.js');
+          });
 
         // handling requests
         var sMessageData = "";
