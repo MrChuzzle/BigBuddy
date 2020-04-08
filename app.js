@@ -5,6 +5,7 @@
 //}).listen(8080, '127.0.0.1');
 var BigBuddy = require("./discord/BigBuddy").oBigBuddy;
 var http = require("http");
+const io = require('socket.io')(server);
 
 // init big buddy bot
 var oBigBuddy = new BigBuddy(process.argv.slice(2));
@@ -32,5 +33,17 @@ function buildServer() {
         }).on("end", () => {
             oBigBuddy.execute(sMessageData);
         });
-    }).listen(8082);
+    }).listen(8082, () => {
+      console.log('HTTP server listening on port 8082');
+    });
 }
+
+// Now for the socket.io stuff - NOTE THIS IS A RESTFUL HTTP SERVER
+// We are only using socket.io here to respond to the npmStop signal
+// To support IPC (Inter Process Communication) AKA RPC (Remote P.C.)
+
+io.on('connection', (socketServer) => {
+  socketServer.on('npmStop', () => {
+  process.exit(0);
+  });
+});
