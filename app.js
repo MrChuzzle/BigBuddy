@@ -10,7 +10,7 @@ var http = require("http");
 var oBigBuddy = new BigBuddy(process.argv.slice(2));
 
 const io = require('socket.io')(buildServer());
-//buildServer now in Socke-IO
+//buildServer now in Socket-IO
 //buildServer();
 
 function buildServer() {

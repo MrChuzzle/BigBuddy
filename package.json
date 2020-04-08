@@ -16,7 +16,7 @@
     "scripts": {
         "start": "npm-run-all --parallel bot serve",
         "stop": "/opt/plesk/node/6/bin/npm run stop-server.js",
-        "serve": "ui5 serve -o webapp/sindex.html",
+        "serve": "ui5 serve -o webapp/index.html",
         "bot": "node app.js",
         "test": "/opt/plesk/node/6/bin/npm run lint",
         "lint": "eslint webapp",
