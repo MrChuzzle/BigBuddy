@@ -5,12 +5,13 @@
 //}).listen(8080, '127.0.0.1');
 var BigBuddy = require("./discord/BigBuddy").oBigBuddy;
 var http = require("http");
-const io = require('socket.io')(server);
+const io = require('socket.io')(buildServer());
 
 // init big buddy bot
 var oBigBuddy = new BigBuddy(process.argv.slice(2));
 
-buildServer();
+//Ist jetzt nach oben gewandert ^^
+//buildServer();
 
 function buildServer() {
     return http.createServer(function (oRequest, oResponse) {
